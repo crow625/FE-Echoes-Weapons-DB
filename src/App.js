@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import { Button, Form, Input } from 'reactstrap';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+
+    const [message, setMessage] = useState('');
+    const [reply, setReply] = useState('');
+
+    const submitForm = async (e) => {
+        e.preventDefault();
+        const submitResponse = await fetch(`api/example`, {
+            method: 'get',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+
+        const r = await submitResponse.json(); // Don't forget .json() lol
+        setReply(r.message);
+    }
+
+    return (
+        <>
+            <Form onSubmit={submitForm}>
+                <Input type="text" id="message" value={message} onChange={(e) => {setMessage(e.target.value)}} />
+
+                <Button type="submit">Send</Button>
+            </Form>
+            
+            {reply && <p>{reply}</p>}
+        </>
+    )
 }
 
 export default App;
