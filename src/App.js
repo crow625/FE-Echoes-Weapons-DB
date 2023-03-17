@@ -21,6 +21,8 @@ const App = () => {
 
     return (
         <>
+            <h1>Whoops</h1>
+            <p>Turns out, you can't run a server on github pages. Time to find a different place.</p>
             <Form onSubmit={submitForm}>
                 <Input type="text" id="message" value={message} onChange={(e) => {setMessage(e.target.value)}} />
 
