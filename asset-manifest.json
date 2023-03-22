@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/FE-Echoes-Weapons-DB/static/css/main.e6c13ad2.css",
-    "main.js": "/FE-Echoes-Weapons-DB/static/js/main.9268557b.js",
+    "main.js": "/FE-Echoes-Weapons-DB/static/js/main.b4c65832.js",
     "static/js/787.3410ea27.chunk.js": "/FE-Echoes-Weapons-DB/static/js/787.3410ea27.chunk.js",
     "index.html": "/FE-Echoes-Weapons-DB/index.html",
     "main.e6c13ad2.css.map": "/FE-Echoes-Weapons-DB/static/css/main.e6c13ad2.css.map",
-    "main.9268557b.js.map": "/FE-Echoes-Weapons-DB/static/js/main.9268557b.js.map",
+    "main.b4c65832.js.map": "/FE-Echoes-Weapons-DB/static/js/main.b4c65832.js.map",
     "787.3410ea27.chunk.js.map": "/FE-Echoes-Weapons-DB/static/js/787.3410ea27.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.9268557b.js"
+    "static/js/main.b4c65832.js"
   ]
 }
