@@ -1,10 +1,23 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button, Form, Input } from 'reactstrap';
+import swords from './json/swords.json';
+import { WeaponSelector } from './Components/WeaponSelector';
 
 const App = () => {
 
     const [message, setMessage] = useState('');
     const [reply, setReply] = useState('');
+    const [weapon, setWeapon] = useState({});
+
+    // useEffect(() => {
+    //     console.log(swords);
+    // }, [])
+
+    const onWeaponSelectHandler = (val) => {
+        console.log(val);
+        setWeapon(val);
+        // console.log(weapon.name);
+    }
 
     const submitForm = async (e) => {
         e.preventDefault();
@@ -21,15 +34,19 @@ const App = () => {
 
     return (
         <>
-            <h1>Whoops</h1>
-            <p>Turns out, you can't run a server on github pages. Time to find a different place.</p>
             <Form onSubmit={submitForm}>
-                <Input type="text" id="message" value={message} onChange={(e) => {setMessage(e.target.value)}} />
+                <WeaponSelector 
+                    weapons={swords} 
+                    onWeaponSelect={onWeaponSelectHandler}
+                    weapon={weapon}
+                />
+                {/* <Input type="text" id="message" value={message} onChange={(e) => {setMessage(e.target.value)}} /> */}
 
-                <Button type="submit">Send</Button>
+                {/* <Button type="submit">Send</Button> */}
             </Form>
             
-            {reply && <p>{reply}</p>}
+            {/* {reply && <p>{reply}</p>} */}
+            {weapon && <p>{weapon.name}</p>}
         </>
     )
 }
